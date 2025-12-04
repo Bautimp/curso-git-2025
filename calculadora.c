@@ -10,7 +10,8 @@ void mostrar_menu(){
     printf("\n CALCULADORA \n");
     printf("1. Sumar\n");
     printf("2. Restar\n");
-    printf("3. Salir\n");
+    printf("3. Restar\n");
+    printf("4. Salir\n");
     printf("Seleccione una opcion: ");
 }
 
@@ -22,9 +23,13 @@ int resta(int a, int b) {
     return(a-b);
 }
 
+int multiplicacion(int a, int b) {
+    return(a*b);
+}
+
 int main() {
     int opcion = 0, num1, num2, resultado;
-    while (opcion!=3) {
+    while (opcion!=4) {
         mostrar_menu();
         scanf("%d", &opcion);
         switch (opcion) {
@@ -45,6 +50,15 @@ int main() {
                 printf("Resultado: %d - %d = %d\n", num1, num2, resultado);
                 break;
             case 3:
+                printf("Ingrese primer numero: ");
+                scanf("%d", &num1);
+                printf("Ingrese segundo numero: ");
+                scanf("%d", &num2);
+                resultado = multiplicacion(num1, num2);
+                printf("Resultado: %d * %d = %d\n", num1, num2, resultado);
+                break;
+
+            case 4:
                 printf("Saliendo...\n");
                 break;
             default:
