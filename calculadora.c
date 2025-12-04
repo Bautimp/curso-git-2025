@@ -19,7 +19,7 @@ int suma(int a, int b) {
 }
 
 int resta(int a, int b) {
-    //completar
+    return(a-b);
 }
 
 int main() {
