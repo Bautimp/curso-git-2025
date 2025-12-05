@@ -10,9 +10,10 @@ void mostrar_menu(){
     printf("\n CALCULADORA \n");
     printf("1. Sumar\n");
     printf("2. Restar\n");
-    printf("3. Restar\n");
-    printf("4. Potencia\n");
-    printf("5. Salir\n");
+    printf("3. Multiplicacion\n");
+    printf("4. Division\n");
+    printf("5. Potencia\n");
+    printf("6. Salir\n");
     printf("Seleccione una opcion: ");
 }
 
@@ -28,14 +29,17 @@ int multiplicacion(int a, int b) {
     return(a*b);
 }
 
+int division(int a, int b){
+    return(a/b);
+}
+
 int potencia(int a) {
     return(a*a);
 }
 
-
 int main() {
     int opcion = 0, num1, num2, resultado;
-    while (opcion!=5) {
+    while (opcion!=6) {
         mostrar_menu();
         scanf("%d", &opcion);
         switch (opcion) {
@@ -65,13 +69,22 @@ int main() {
                 break;
 
             case 4:
+                printf("Ingrese primer numero: ");
+                scanf("%d", &num1);
+                printf("Ingrese segundo numero: ");
+                scanf("%d", &num2);
+                resultado = division(num1, num2);
+                printf("Resultado: %d / %d = %d\n", num1, num2, resultado);
+                break;
+
+            case 5:
                 printf("Ingrese un numero: ");
                 scanf("%d", &num1);
                 resultado = potencia(num1);
                 printf("Resultado: %d * %d = %d\n", num1, num1, resultado);
                 break;
 
-            case 5:
+            case 6:
                 printf("Saliendo...\n");
                 break;
             default:
